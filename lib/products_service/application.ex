@@ -16,7 +16,6 @@ defmodule ProductsService.Application do
         plug: ProductsService.Endpoint,
           options: [port: Application.get_env(:products_service, :port)]
       ),
-      Products.Repo
     ]
   end
 

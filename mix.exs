@@ -6,7 +6,7 @@ defmodule ProductsService.MixProject do
       app: :products_service,
       version: "0.1.0",
       elixir: "~> 1.9",
-      start_permanent: Mix.env() == :prod,
+      start_permanent: Mix.env() == :dev,
       deps: deps()
     ]
   end
