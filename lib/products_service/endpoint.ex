@@ -31,7 +31,7 @@ defmodule ProductsService.Endpoint do
 
   get "/products/:id" do
     status = 200
-    body = Products.show(id)
+    body = Poison.encode!(Products.show(id))
     send_resp(conn, status, body)
   end
 

@@ -1,9 +1,9 @@
 defmodule Products do
   def list do
-    %{"status" => "done","source" => "network"}
+    ProductsService.Product|>  ProductsService.Repo.all
   end
 
   def show(id) do
-    Poison.encode! %{"id" => id}
+    ProductsService.Product|>  ProductsService.Repo.get(id)
   end
 end
