@@ -18,8 +18,9 @@ defmodule ProductsService.Products do
 
   def show(id) do
     # IEx.pry()
-    {id_to_query, _} = :string.to_integer(id)
-      query = from p in "product", select: p.name, where: p.id == ^id_to_query
+    # {id_to_query, _} = :string.to_integer(id)
+    # query = from p in "product", select: p.name, where: p.id == ^id_to_query
+    query = from p in "product", select: p.name, where: p.id == type(^id, :integer)
     ProductsService.Repo.all(query)
   end
 end
