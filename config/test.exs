@@ -7,4 +7,5 @@ config :products_service, ProductsService.Repo,
   database: "products_service_repo_test",
   username: "elixir",
   password: "pass",
-  hostname: "localhost"
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox

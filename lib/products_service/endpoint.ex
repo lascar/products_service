@@ -1,5 +1,6 @@
 # ./lib/products_service/endpoint.ex
 defmodule ProductsService.Endpoint do
+  require IEx
   @moduledoc """
   A Plug responsible for logging request info, parsing request body's as JSON,
   matching routes, and dispatching responses.
@@ -31,13 +32,13 @@ defmodule ProductsService.Endpoint do
 
   get "/products/:id" do
     status = 200
-    body = Poison.encode!(Products.show(id))
+    body = Poison.encode!(ProductsService.Products.show(id))
     send_resp(conn, status, body)
   end
 
   get "/products" do
     status = 200
-    body = Poison.encode!(Products.list())
+    body = Poison.encode!(ProductsService.Products.list())
     send_resp(conn, status, body)
   end
 
